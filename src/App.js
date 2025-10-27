@@ -210,97 +210,57 @@ export default function App() {
 </section>
 
       {/* PROJECTS SECTION */}
-<section
-  id="projects"
+<motion.div
+  whileHover={{
+    scale: 1.05,
+    boxShadow: "0 0 25px rgba(96,165,250,0.5)",
+  }}
+  transition={{ type: "spring", stiffness: 200 }}
   style={{
-    padding: "80px 20px",
-    background: "#121212",
+    background: "#1e293b",
+    borderRadius: "12px",
+    padding: "20px",
+    width: "300px",
     textAlign: "center",
+    color: "#d1d5db",
   }}
 >
-  <h2
+  <img
+    src="https://via.placeholder.com/300x180.png?text=Project+A+Preview"
+    alt="Project A Preview"
     style={{
-      fontSize: "2rem",
-      color: "#ffffff",
-      marginBottom: "40px",
+      width: "100%",
+      height: "180px",
+      objectFit: "cover",
+      borderRadius: "8px",
+      marginBottom: "15px",
+    }}
+  />
+
+  <h3 style={{ fontSize: "1.3rem", color: "#a8cfff", marginBottom: "10px" }}>
+    DCIT26 Midterm Project
+  </h3>
+
+  <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
+    My midterm web development project built with React, Tailwind CSS, and PHP.  
+    Hosted on my GitHub repository.
+  </p>
+
+  <a
+    href="https://github.com/pallerjohnbenedict-spec/DCIT26-Midterm/blob/main/updated/homepage.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: "#60a5fa",
+      textDecoration: "none",
       fontWeight: "bold",
     }}
   >
-    My Projects
-  </h2>
+    🔗 View on GitHub
+  </a>
+</motion.div>
 
-  <div
-    style={{
-      display: "flex",
-      flexWrap: "wrap",
-      gap: "30px",
-      justifyContent: "center",
-      alignItems: "stretch",
-    }}
-  >
-    {/* DCIT26 Midterm Project */}
-    <motion.div
-      whileHover={{
-        scale: 1.05,
-        boxShadow: "0 0 25px rgba(96,165,250,0.5)",
-      }}
-      transition={{ type: "spring", stiffness: 200 }}
-      style={{
-        background: "#1e293b",
-        borderRadius: "12px",
-        padding: "20px",
-        width: "300px",
-        textAlign: "center",
-        color: "#d1d5db",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-      }}
-    >
-      <img
-        src="https://via.placeholder.com/300x180.png?text=DCIT26+Midterm" 
-        // ⬆️ Replace with your real image (ex: "/assets/DCIT26.png")
-        alt="DCIT26 Midterm Project"
-        style={{
-          width: "100%",
-          height: "180px",
-          objectFit: "cover",
-          borderRadius: "8px",
-          marginBottom: "15px",
-        }}
-      />
 
-      <h3
-        style={{
-          fontSize: "1.3rem",
-          color: "#a8cfff",
-          marginBottom: "10px",
-          fontWeight: "600",
-        }}
-      >
-        DCIT26 Midterm Project
-      </h3>
-
-      <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
-        My midterm web development project built with React, Tailwind CSS, and
-        Framer Motion. Hosted on my GitHub repository.
-      </p>
-
-      <a
-        href="https://github.com/pallerjohnbenedict-spec/DCIT26-Midterm"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          color: "#60a5fa",
-          textDecoration: "none",
-          fontWeight: "bold",
-        }}
-      >
-        🔗 View on GitHub
-      </a>
-    </motion.div>
-  </div>
-</section>
 
 
       {/* CONTACT */}
