@@ -1,0 +1,58 @@
+
+-- Create document_type table
+CREATE TABLE document_type (
+    name VARCHAR(100) PRIMARY KEY,
+    description TEXT
+);
+
+-- Create document_requests table
+CREATE TABLE document_requests (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id varchar(50) NOT NULL,
+    document_type_name VARCHAR(100) NOT NULL,
+    purpose TEXT,
+    request_date DATETIME,
+    release_date DATETIME,
+    status ENUM("Pending", "Approved", "Rejected")
+    rejection_reason TEXT
+    processed_at TIMESTAMP
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (document_type_name) REFERENCES document_type(name)
+);
+
+-- Create grades table
+CREATE TABLE grades (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id VARCHAR(50) NOT NULL,
+    subject VARCHAR(100) NOT NULL,
+    grade DECIMAL(5,2) NOT NULL,
+    professor_name VARCHAR(50),
+    verified_by VARCHAR(50),
+    is_verified BOOLEAN DEFAULT FALSE,
+    date_recorded DATETIME,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+   
+);
+
+
+
+
+-- Users table
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(255),
+    role ENUM('student', 'professor', 'admin'),
+    contact_number VARCHAR(20)
+);
+
+-- Students table
+CREATE TABLE students (
+    student_id VARCHAR(50) PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+

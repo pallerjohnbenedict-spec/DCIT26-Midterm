@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | CvSU</title>
+  <link rel="stylesheet" href="login.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <style>.admin-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.profile-container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.profile-container img {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.admin-name {
+  font-size: 22px;
+  margin: 10px 0 20px;
+  color: var(--primary-color);
+}
+
+.contact-icons ion-icon {
+  font-size: 24px;
+  margin: 0 10px;
+  color: var(--primary-color);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.contact-icons ion-icon:hover {
+  color: #004d2c;
+}
+
+.actions {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.logout {
+  background-color: #f44336;
+  color: white;
+}
+
+.logout:hover {
+  background-color: #d32f2f;
+}
+
+.change-account {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.change-account:hover {
+  background-color: #004d2c;
+}
+</style>
+
+  <input type="checkbox" id="nav-toggle" hidden />
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h2>
+        <ion-icon name="logo-buffer"></ion-icon>
+        <span>CvSU</span>
+      </h2>
+    </div>
+    <nav class="sidebar-menu">
+      <ul>
+        <li><a href="admin.php"><ion-icon name="list-outline"></ion-icon>Dashboard</a></li>
+        <li><a href="ad_profile.html"><ion-icon name="person-circle-outline"></ion-icon>Profile</a></li>
+        <li><a href="requests.php"><ion-icon name="file-tray-full-outline"></ion-icon>Requests</a></li>
+        <li><a href="ad_grade_req.php"><ion-icon name="people-circle-outline"></ion-icon>Instructors</a></li>
+        <li><a href="add_document.php"><ion-icon name="document-text-outline"></ion-icon>Add Document</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="main-header">
+      <h2>
+        <label for="nav-toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+        </label>
+        Admin Dashboard
+      </h2>
+      <div class="user">
+        <a href="ad_profile.html">
+          <img src="wandaheyhey.jpg" width="40" height="40" alt="Admin Profile" />
+        </a>
+        <div>
+          <h4>UserName</h4>
+        </div>
+      </div>
+    </header>
+
+    <section class="admin-profile">
+      <div class="profile-container">
+        <div class="profile-pic">
+          <img src="wandaheyhey.jpg" width="160" height="160" alt="Admin Photo" />
+        </div>
+        <h3 class="admin-name">Admin UserName</h3>
+       
+        <div class="actions">
+          <a href="#" class="btn logout">Logout</a>
+          <a href="#" class="btn change-account">Change Account</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

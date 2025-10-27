@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Document Verification System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .stat-number {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .main-content {
+            display: flex;
+            min-height: 600px;
+        }
+        
+        .sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 20px;
+        }
+        
+        .filter-section {
+            margin-bottom: 25px;
+        }
+        
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .filter-btn {
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .filter-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .badge {
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .content-area {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-bar:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .request-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .request-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .request-header {
+            padding: 20px;
+            border-bottom: 1px solid #f1f3f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .student-details h3 {
+            margin-bottom: 3px;
+            color: #2c3e50;
+        }
+        
+        .student-id {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .status-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .request-body {
+            padding: 20px;
+        }
+        
+        .request-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-approve {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+        
+        .btn-reject {
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            color: white;
+        }
+        
+        .btn-view {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .modal h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .modal textarea {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            resize: vertical;
+            margin: 15px 0;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+        
+        .notification.error {
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Document Verification Center</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Today</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">234</div>
+                    <div class="stat-label">Total</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="filter-section">
+                    <div class="filter-title">Request Status</div>
+                    <div class="filter-options">
+                        <div class="filter-btn active" data-filter="pending">
+                            <span>Pending Requests</span>
+                            <span class="badge">12</span>
+                        </div>
+                        <div class="filter-btn" data-filter="approved">
+                            <span>Approved</span>
+                            <span class="badge" style="background: #28a745;">8</span>
+                        </div>
+                        <div class="filter-btn" data-filter="rejected">
+                            <span>Rejected</span>
+                            <span class="badge" style="background: #6c757d;">3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <div class="filter-title">Document Type</div>
+                    <div class="filter-options">
+                        <div class="filter-btn" data-filter="transcript">
+                            <span>Transcript</span>
+                        </div>
+                        <div class="filter-btn" data-filter="diploma">
+                            <span>Diploma</span>
+                        </div>
+                        <div class="filter-btn" data-filter="certificate">
+                            <span>Certificate</span>
+                        </div>
+                        <div class="filter-btn" data-filter="enrollment">
+                            <span>Enrollment Cert.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <input type="text" class="search-bar" placeholder="Search by student name, ID, or document type...">
+                
+                <div class="request-card">
+                    <div class="request-header">
+                        <div class="student-info">
+                            <div class="avatar">JS</div>
+                            <div class="student-details">
+                                <h3>Juan Santos</h3>
+                                <div class="student-id">Student ID: 2024-001234</div>
+                            </div>
+                        </div>
+                        <div class="status-badge status-pending">Pending</div>
+                    </div>
+                    <div class="request-body">
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Document Type</div>
+                                <div class="detail-value">Official Transcript</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Request Date</div>
+                                <div class="detail-value">June 8, 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Purpose</div>
+                                <div class="detail-value">Job Application</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Copies Needed</div>
+                                <div class="detail-value">2 copies</div>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-view" onclick="viewDetails()">👁️ View Details</button>
+                            <button class="btn btn-reject" onclick="showRejectModal()">❌ Reject</button>
+                            <button class="btn btn-approve" onclick="approveRequest()">✅ Approve</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="request-header">
+                        <div class="student-info">
+                            <div class="avatar">MR</div>
+                            <div class="student-details">
+                                <h3>Maria Rodriguez</h3>
+                                <div class="student-id">Student ID: 2024-005678</div>
+                            </div>
+                        </div>
+                        <div class="status-badge status-pending">Pending</div>
+                    </div>
+                    <div class="request-body">
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Document Type</div>
+                                <div class="detail-value">Diploma Copy</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Request Date</div>
+                                <div class="detail-value">June 9, 2025</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Purpose</div>
+                                <div class="detail-value">Graduate School Application</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Copies Needed</div>
+                                <div class="detail-value">1 copy</div>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-view" onclick="viewDetails()">👁️ View Details</button>
+                            <button class="btn btn-reject" onclick="showRejectModal()">❌ Reject</button>
+                            <button class="btn btn-approve" onclick="approveRequest()">✅ Approve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reject Modal -->
+    <div class="modal" id="rejectModal">
+        <div class="modal-content">
+            <h3>Reject Document Request</h3>
+            <p>Please provide a reason for rejecting this request:</p>
+            <textarea placeholder="Enter rejection reason here..."></textarea>
+            <div class="modal-buttons">
+                <button class="btn btn-reject" onclick="confirmReject()">Confirm Reject</button>
+                <button class="btn" onclick="closeModal()" style="background: #6c757d; color: white;">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+    
+    <script>
+        function approveRequest() {
+            showNotification('Document request approved successfully!', 'success');
+            // Here you would typically make an API call to update the database
+            // updateRequestStatus(requestId, 'approved');
+        }
+        
+        function showRejectModal() {
+            document.getElementById('rejectModal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('rejectModal').style.display = 'none';
+        }
+        
+        function confirmReject() {
+            const reason = document.querySelector('#rejectModal textarea').value;
+            if (!reason.trim()) {
+                alert('Please provide a reason for rejection.');
+                return;
+            }
+            
+            showNotification('Document request rejected.', 'error');
+            closeModal();
+            // Here you would typically make an API call to update the database
+            // updateRequestStatus(requestId, 'rejected', reason);
+        }
+        
+        function viewDetails() {
+            showNotification('Opening detailed view...', 'success');
+            // Here you would typically navigate to a detailed view page
+        }
+        
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type} show`;
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Here you would typically filter the requests based on the selected filter
+                const filter = this.getAttribute('data-filter');
+                console.log('Filtering by:', filter);
+            });
+        });
+        
+        // Search functionality
+        document.querySelector('.search-bar').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log('Searching for:', searchTerm);
+            // Here you would typically filter the visible requests based on the search term
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('rejectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
