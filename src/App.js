@@ -260,9 +260,6 @@ export default function App() {
   </a>
 </motion.div>
 
-
-
-
       {/* CONTACT */}
       <section
         id="contact"
