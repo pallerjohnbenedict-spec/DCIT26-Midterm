@@ -209,57 +209,68 @@ export default function App() {
   </div>
 </section>
 
-      {/* PROJECTS SECTION */}
-<motion.div
-  whileHover={{
-    scale: 1.05,
-    boxShadow: "0 0 25px rgba(96,165,250,0.5)",
-  }}
-  transition={{ type: "spring", stiffness: 200 }}
+    {/* PROJECTS SECTION */}
+<section
+  id="projects"
   style={{
-    background: "#1e293b",
-    borderRadius: "12px",
-    padding: "20px",
-    width: "300px",
+    background: "#121212",
+    color: "white",
+    padding: "100px 20px",
     textAlign: "center",
-    color: "#d1d5db",
   }}
 >
-  <img
-    src="https://via.placeholder.com/300x180.png?text=Project+A+Preview"
-    alt="Project A Preview"
-    style={{
-      width: "100%",
-      height: "180px",
-      objectFit: "cover",
-      borderRadius: "8px",
-      marginBottom: "15px",
+  <motion.div
+    whileHover={{
+      scale: 1.05,
+      boxShadow: "0 0 25px rgba(96,165,250,0.5)",
     }}
-  />
-
-  <h3 style={{ fontSize: "1.3rem", color: "#a8cfff", marginBottom: "10px" }}>
-    DCIT26 Midterm Project
-  </h3>
-
-  <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
-    My midterm web development project built with React, Tailwind CSS, and PHP.  
-    Hosted on my GitHub repository.
-  </p>
-
-  <a
-    href="https://github.com/pallerjohnbenedict-spec/DCIT26-Midterm/blob/main/updated/homepage.html"
-    target="_blank"
-    rel="noopener noreferrer"
+    transition={{ type: "spring", stiffness: 200 }}
     style={{
-      color: "#60a5fa",
-      textDecoration: "none",
-      fontWeight: "bold",
+      background: "#1e293b",
+      borderRadius: "12px",
+      padding: "20px",
+      width: "300px",
+      textAlign: "center",
+      color: "#d1d5db",
+      margin: "0 auto",
     }}
   >
-    🔗 View on GitHub
-  </a>
-</motion.div>
+    <img
+      src="https://via.placeholder.com/300x180.png?text=Project+A+Preview"
+      alt="Project A Preview"
+      style={{
+        width: "100%",
+        height: "180px",
+        objectFit: "cover",
+        borderRadius: "8px",
+        marginBottom: "15px",
+      }}
+    />
 
+    <h3 style={{ fontSize: "1.3rem", color: "#a8cfff", marginBottom: "10px" }}>
+      DCIT26 Midterm Project
+    </h3>
+
+    <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
+      My midterm web development project built with React, Tailwind CSS, and PHP.  
+      Hosted locally and linked to <code>homepage.html</code>.
+    </p>
+
+<a
+  href="/updated/homepage.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    color: "#60a5fa",
+    textDecoration: "none",
+    fontWeight: "bold",
+  }}
+>
+  🔗 Open homepage.html
+</a>
+
+  </motion.div>
+</section>
       {/* CONTACT */}
       <section
         id="contact"
