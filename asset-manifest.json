@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/DCIT26-Midterm/static/css/main.e6c13ad2.css",
+    "main.js": "/DCIT26-Midterm/static/js/main.514189b5.js",
+    "static/media/me.jpg": "/DCIT26-Midterm/static/media/me.fae35d38c1ef43e4830c.jpg",
+    "index.html": "/DCIT26-Midterm/index.html",
+    "main.e6c13ad2.css.map": "/DCIT26-Midterm/static/css/main.e6c13ad2.css.map",
+    "main.514189b5.js.map": "/DCIT26-Midterm/static/js/main.514189b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.514189b5.js"
+  ]
+}

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CvSU College Website</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="navbar.css" />
+   
+   
+</head>
+<body  onload="document.querySelector('.main-navbar').classList.add('show')">
+  <div class="page-dim-overlay"></div>
+
+  
+  <!-- Top Navbar -->
+  <div class="top-navbar">
+  <div class="top-content text-center">
+    <span class="top-text">Truth, Excellence, Service</span> |
+    <a href="https://facebook.com/CvSU"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fa fa-envelope"></i></a> |
+    <a href="login.php">Login</a> |
+    <a href="sign-up.php">Register</a>
+  </div>
+</div>
+
+  <!-- Main Navbar -->
+  <nav class="main-navbar fixed-top">
+    <div class="navbar-container">
+      <!-- Logo & Name -->
+      <a href="homepage.html" class="navbar-left-link">
+  <div class="navbar-left">
+    <img src="upload/Cavite_State_University__CvSU_-removebg-preview.png" alt="CvSU Logo" />
+    <div class="campus-text">
+      <span class="school-name">CvSU</span><br />
+      <span class="campus-name">BACOOR CAMPUS</span>
+    </div>
+  </div>
+</a>
+    
+    
+   
+      <div class="navbar-links">
+      <div class="dropdown mega-dropdown">
+  <button class="dropbtn">
+    About <i class="fas fa-angle-down"></i>
+  </button>
+
+  <div class="mega-menu">
+    <div class="mega-column">
+      <h4>Story of CvSU</h4>
+      <a href="about.html">The History of CvSU</a>
+      <a href="about.html">Vision and Mission</a>
+      <a href="about.html">Core Values</a>
+    </div>
+  </div>
+</div>
+
+<div class="dropdown mega-dropdown">
+<button class="dropbtn">Documents <i class="fas fa-angle-down"></i>
+  </button>
+          <div class="mega-menu">
+            <div class="mega-column">
+              <h4>Documents</h4>
+              <a href="ad.html">Request Document</a>
+            </div>
+          
+          </div>
+        </div>
+      
+      <div class="dropdown mega-dropdown"> 
+   <button class="dropbtn">Academics <i class="fas fa-angle-down"></i>
+  </button>
+  
+  <div class="mega-menu">
+    <div class="mega-column">
+      <h4>Schedules</h4>
+      <a href="sched.html">Class Schedule</a>
+      <a href="sched.html">Academic Calendar</a>
+    </div>
+  <div class="mega-column">
+      <h4>Track Progress</h4>
+      <a href="sched.html">Exam Results</a>
+      <a href="sched.html">Quizzes & Activities</a>
+    </div>
+
+  </div>
+</div>
+
+
+    <div class="dropdown mega-dropdown profile-dropdown">
+    <button class="dropbtn">
+    <i class="fas fa-user-circle"></i> Profile <i class="fas fa-angle-down"></i>
+    </button>
+  
+  <div class="mega-menu profile-menu">
+    <div class="mega-column">
+      <a href="profile.html"><i class="fas fa-user"></i> View Profile</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-container">
+    <input type="text" placeholder="Type keyword and hit enter" />
+    <button onclick="closeSearch()" class="close-btn">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div>
+
+
+<nav class="navbar">
+<button onclick="toggleSearch()" id="searchToggle" class="search-icon-btn">
+  <i class="fas fa-search"></i>
+</button>
+  </nav>
+   </div>
+   
+<nav class="navbar">
+
+<!-- Notification Button -->
+<button id="toggleDropdown" class="notification-icon-btn">
+  <i class="fa fa-bell"></i>
+</button>
+
+<!-- Notification Dropdown -->
+<div id="notificationDropdown" class="notification-dropdown">
+  <div class="dropdown-header">
+    <span>Notifications</span>
+    <div class="dropdown-actions">
+    </div>
+  </div>
+  <hr>
+  <div class="dropdown-body">
+    <i class="fa-regular fa-bell empty-icon"></i>
+    <p class="empty-text">All clear! No notifications yet.</p>
+  </div>
+</div>
+
+</nav>
+
+
+
+  </nav>
+
+
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+  </div>
+
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <img src="upload/CvSU-Front-09-2023-scaled.jpg" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption animated-caption">
+      <h2>Welcome to CvSU Bacoor Campus</h2>
+      <p>Empowering Minds. Building Futures.</p>
+  </div>
+  </div>
+    <div class="carousel-item">
+      <img src="upload/CvSU-Commencement-scaled.jpg" class="d-block w-100" alt="Slide 2">
+       
+    </div>
+    <div class="carousel-item">
+      <img src="upload/laya-at-diwa.jpg" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item">
+      <img src="upload/STRASUC2.jpg" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item">
+      <img src="upload/cvsu.jpg" class="d-block w-100" alt="Slide 3">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+  <!-- Welcome Section -->
+  <section class="welcome about text-center"> 
+    <div class="Welcome">
+      <h3>Welcome to Cavite State University – Bacoor Campus!</h3>
+      <p>
+        We're proud to present our official online platform designed to keep students, faculty, and visitors connected and informed.
+        Explore our academic offerings, stay updated with campus events and access important documents—all in one place. At CvSU, we uphold the values of <strong>Truth, Excellence, Service</strong>
+        as we strive to create a digitally empowered learning environment for everyone.
+      </p>
+    </div>
+   </section>
+
+<section class="about-section2">
+  <div class="about-container2">
+    <div class="about-content2 animate-on-scroll">
+      <h2>Cavite State University</h2>
+      <p>
+      a Student Information Management System (SIMS) helps manage student records like activities, quizzes, and documents. It aims to improve how students, teachers, and staff track academic progress and handle documents.
+      </p>
+      <div class="about-buttons2">
+        <a href="ad.html" class="btn-green2">Learn more</a>
+      </div>
+    </div>
+   <div class="about-image2 animate-on-scroll"></div>
+  </div>
+</section>
+
+<section class="study-process">
+  <h2 class="process-title">Empowering Learning Through Technology</h2>
+  <p class="process-subtitle">"From easier manual transactions to effortless performance tracking  — discover how our system elevates education."</p>
+
+  <div class="process-steps">
+    <div class="step">
+      <img src="upload/1.png" alt="Step 1 Icon" />
+      <h3>Handle documents with ease </h3>
+      <p>Say goodbye to paperwork delays with a clear document handling.</p>
+     
+    </div>
+    <div class="step">
+      <img src="upload/2.png" alt="Step 3 Icon" />
+      <h3>Track Progress</h3>
+      <p>Monitor and stay on top of your academic performance with ease.</p>
+    
+    </div>
+    <div class="step">
+      <img src="upload/3.png" alt="Step 2 Icon" />
+      <h3>Quick and Hassle Free</h3>
+      <p>Updates through your personalized dashboard.</p>
+     
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- Collapsible Section -->
+
+<footer class="site-footer" id="contact" data-aos="fade-up" data-aos-duration="1000">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>Contact Us</h3>
+        <p>
+          <i class="fab fa-facebook fa-lg me-2"></i>
+          <a href="https://facebook.com/CvSU" target="_blank">facebook.com/CvSU</a>
+        </p>
+        <p>
+          <i class="fa fa-envelope"></i>
+        cvsubacoor@cvsu.edu.ph
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt me-2"></i>
+          CvSU Bacoor Campus, Molino Boulevard, Bacoor, Cavite
+        </p>
+        <p>
+          <i class="fas fa-phone-alt me-2"></i>
+               Call: (046) 476-5029
+        </p>
+      </div>
+
+
+      <div class="footer-right map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.7165479642957!2d120.97426267506408!3d14.450531182378013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33962c18115c2cc1%3A0x4a79cbb62b5a16c1!2sCvSU%20Bacoor%20Campus!5e0!3m2!1sen!2sph!4v1625657413524!5m2!1sen!2sph"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>&copy; 2025 Cavite State University - Bacoor Campus. All Rights Reserved.</p>
+      <p>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- more animation -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleDropdown');
+    const dropdown = document.getElementById('notificationDropdown');
+
+    // Toggle show/hide class
+    toggleButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent bubbling to document
+      dropdown.classList.toggle('show');
+    });
+
+    // Close if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target) && !toggleButton.contains(e.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+  });
+
+ const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.remove('fade-up'); 
+        void el.offsetWidth;           
+        el.classList.add('fade-up');  
+      } else {
+        el.classList.remove('fade-up');
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+
+// dropdown
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdowns = document.querySelectorAll(".mega-dropdown");
+
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector(".dropbtn");
+
+      button.addEventListener("click", function (e) {
+        e.stopPropagation();
+        
+        // Close other open dropdowns
+        dropdowns.forEach(d => {
+          if (d !== dropdown) d.classList.remove("open");
+        });
+
+        // Toggle this dropdown
+        dropdown.classList.toggle("open");
+      });
+    });
+
+    // Close dropdowns if clicked outside
+    document.addEventListener("click", function () {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("open");
+      });
+    });
+  });
+
+
+// sa search parin  
+
+document.body.classList.add('search-active'); // when opening search
+document.body.classList.remove('search-active'); // when closing search
+
+   window.addEventListener('scroll', function () {
+  const mainNavbar = document.querySelector('.main-navbar');
+  const topNavbar = document.querySelector('.top-navbar');
+
+  if (window.scrollY > 40) {
+    topNavbar.classList.add('hidden');
+    mainNavbar.classList.add('pinned');
+  } else {
+    topNavbar.classList.remove('hidden');
+    mainNavbar.classList.remove('pinned');
+  }
+});
+
+// sa search
+     const searchOverlay = document.querySelector('.search-overlay');
+const dimOverlay = document.querySelector('.page-dim-overlay');
+const openBtn = document.querySelector('.search-icon-btn');
+const closeBtn = document.querySelector('.close-btn');
+
+openBtn.addEventListener('click', () => {
+  searchOverlay.classList.add('active');
+  dimOverlay.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  searchOverlay.classList.remove('active');
+  dimOverlay.classList.remove('active');
+});
+  
+function toggleSearch() {
+  document.getElementById("searchOverlay").classList.add("active");
+  document.getElementById("searchToggle").classList.add("hidden");
+}
+
+function closeSearch() {
+  document.getElementById("searchOverlay").classList.remove("active");
+  document.getElementById("searchToggle").classList.remove("hidden");
+}
+
+// animation for welcome
+       document.addEventListener('DOMContentLoaded', function () {
+    const target = document.querySelector('.welcome .Welcome');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          target.classList.add('animate');
+        } else {
+          target.classList.remove('animate');
+        }
+      });
+    });
+
+    if (target) {
+      observer.observe(target);
+    }
+  });
+
+  // animation for news and events 
+      document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById('newsSlider');
+        const slideLeft = document.getElementById('slideLeft');
+        const slideRight = document.getElementById('slideRight');
+    
+        const scrollAmount = 800;
+    
+        slideLeft.addEventListener('click', () => {
+          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    
+        slideRight.addEventListener('click', () => {
+          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      });
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale= 1.0"> 
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+
+</html>
+<body>
+    <section class="body">
+        <div class="container">
+        <div class="login-box">
+            <h2>Registrar Login</h2>
+            <form action="" method="post">
+                <div class="input-field">
+                    <input type="reg_username" name="reg_username" required>
+                    <span class="logo"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <label>Username</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="reg_password" required>
+                    <span class="logo"><ion-icon name="lock-closed"></ion-icon></span>
+                    <label>Password</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox">Remember Me</label>
+                </div>
+                <button type="submit" name="submit" class="button" onclick="location.href='admin.html'">Login</button>
+                <div class="sign_link">
+                    <p>Don't have an account?
+                        <a href="sign-up.html">Sign Up</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    </section>
+
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    
+</body>
+</html>
