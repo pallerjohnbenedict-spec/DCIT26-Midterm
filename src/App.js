@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import myPhoto from "./assets/me.jpg";
 import Counter from "./components/Counter";
 import { motion } from "framer-motion";
+import ss1 from "./assets/ss1.png";
 
 export default function App() {
   const sectionStyle = {
@@ -144,9 +145,7 @@ export default function App() {
     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
     viewport={{ once: true }}
   >
-    I love creating simple, functional designs and turning ideas into responsive,
-    interactive web experiences. I focus on clean layouts and minimal interfaces
-    that communicate clearly.
+   Language I used:
   </motion.p>
 
   {/* Skill Logos */}
@@ -209,7 +208,7 @@ export default function App() {
   </div>
 </section>
 
-    {/* PROJECTS SECTION */}
+{/* PROJECTS SECTION */}
 <section
   id="projects"
   style={{
@@ -235,42 +234,54 @@ export default function App() {
       margin: "0 auto",
     }}
   >
+    {/* ✅ Project Image */}
     <img
-      src="https://via.placeholder.com/300x180.png?text=Project+A+Preview"
+      src={ss1}
       alt="Project A Preview"
       style={{
         width: "100%",
         height: "180px",
         objectFit: "cover",
         borderRadius: "8px",
-        marginBottom: "15px",
+        marginBottom: "10px",
       }}
     />
 
-    <h3 style={{ fontSize: "1.3rem", color: "#a8cfff", marginBottom: "10px" }}>
-      DCIT26 Midterm Project
+    {/* ✅ Project Title */}
+    <h3
+      style={{
+        fontSize: "1.3rem",
+        color: "#a8cfff",
+        marginBottom: "10px",
+      }}
+    >
+      CvSU Online Appointment
     </h3>
 
-    <p style={{ fontSize: "0.95rem", marginBottom: "15px" }}>
-      My midterm web development project built with React, Tailwind CSS, and PHP.  
-      Hosted locally and linked to <code>homepage.html</code>.
-    </p>
-
-<a
-  href="/updated/homepage.html"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    color: "#60a5fa",
-    textDecoration: "none",
-    fontWeight: "bold",
-  }}
->
-  🔗 Open homepage.html
-</a>
-
+    {/* ✅ Link Button */}
+    <a
+      href={process.env.PUBLIC_URL + "/updated/homepage.html"}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-block",
+        marginTop: "10px",
+        background: "#60a5fa",
+        color: "#121212",
+        padding: "10px 15px",
+        borderRadius: "8px",
+        fontWeight: "bold",
+        textDecoration: "none",
+        transition: "background 0.3s",
+      }}
+      onMouseEnter={(e) => (e.target.style.background = "#93c5fd")}
+      onMouseLeave={(e) => (e.target.style.background = "#60a5fa")}
+    >
+      🔗 Open homepage.html
+    </a>
   </motion.div>
 </section>
+
       {/* CONTACT */}
       <section
         id="contact"
