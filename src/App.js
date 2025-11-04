@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import myPhoto from "./assets/me.jpg";
 import ss2 from "./assets/ss2.png";
+import ss3 from "./assets/ss3.png";
 import { motion } from "framer-motion";
 import ss1 from "./assets/ss1.png";
 
@@ -317,7 +318,7 @@ export default function App() {
             onMouseEnter={(e) => (e.target.style.background = "#93c5fd")}
             onMouseLeave={(e) => (e.target.style.background = "#60a5fa")}
           >
-            🔗 Open homepage.html
+            🔗 View CvSu Online Appointment
           </a>
         </motion.div>
 
@@ -375,8 +376,68 @@ export default function App() {
             onMouseLeave={(e) => (e.target.style.background = "#60a5fa")}
           >
             🔗 View To-Do App
-          </a>
+          </a>  
         </motion.div>
+        
+        <motion.div
+  whileHover={{
+    scale: 1.05,
+    boxShadow: "0 0 25px rgba(96,165,250,0.5)",
+  }}
+  transition={{ type: "spring", stiffness: 200 }}
+  style={{
+    background: "#1e293b",
+    borderRadius: "12px",
+    padding: "20px",
+    width: "300px",
+    textAlign: "center",
+    color: "#d1d5db",
+  }}
+>
+  <img
+    src={ss3}
+    alt="Project C Preview"
+    style={{
+      width: "100%",
+      height: "180px",
+      objectFit: "cover",
+      borderRadius: "8px",
+      marginBottom: "10px",
+    }}
+  />
+
+  <h3
+    style={{
+      fontSize: "1.3rem",
+      color: "#a8cfff",
+      marginBottom: "10px",
+    }}
+  >
+    International State College of the Philippines  </h3>
+
+  <a
+    href="/ISCP/prototype.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      marginTop: "10px",
+      background: "#60a5fa",
+      color: "#121212",
+      padding: "10px 15px",
+      borderRadius: "8px",
+      fontWeight: "bold",
+      textDecoration: "none",
+      transition: "background 0.3s",
+    }}
+    onMouseEnter={(e) => (e.target.style.background = "#93c5fd")}
+    onMouseLeave={(e) => (e.target.style.background = "#60a5fa")}
+  >
+    🔗 View ISCP
+  </a>
+</motion.div>
+
+ 
       </section>
 
       {/* CONTACT */}

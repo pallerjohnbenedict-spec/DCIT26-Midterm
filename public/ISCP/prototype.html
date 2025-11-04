@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="prototype.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button onclick="document.getElementById('id01').style.display='block'" class="top-button">Login</button>
+        <button onclick="document.getElementById('id02').style.display='block'" class="top-button">Register</button>
+    </div>
+    <header>
+        <!--YUNG LOGO SA KANAN TABI NG PANAGALAN NG SCHOOL-->
+        <img src="ISCP.png" alt="logo" class="logo">
+        <h1>Welcome to International State College of the Philippines.</h1>
+        
+        
+    </header>
+    <div id="id01" class="modal">
+        <form class="modal-content">
+            <div class="imgcontainer">
+                <img src="img_avatar2.jpg" alt="Avatar" class="avatar">
+            </div>
+            <div class="box">
+                <input type="text" placeholder="Username" class="uname" required>
+                <input type="password" placeholder="Enter Password" class="psw" required>
+                <button type="submit" class="login">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancel">Cancel</button>
+                <p class="fp">Forgot <a href="#">password?</a></p>
+            </div>
+        </form>
+    </div>
+    <!--END NG LOGIN BUTTON-->
+
+    
+
+      <!-- Registration Form -->
+      <div id="id02" class="modal">
+        <form class="modal-content" id="registerForm">
+            <div class="imgcontainer">
+                <img src="ISCP.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="box">
+                <input type="text" placeholder="Name" class="uname" required>
+                <input type="text" placeholder="Student Number" class="uname" required>
+                <input type="text" placeholder="Contact Number" class="uname" required>
+                <input type="password" placeholder="Enter Password" class="psw" required>
+                <input type="password" placeholder="Confirm Password" class="psw" required>
+                <input type="email" placeholder="Enter Email" class="email" required>
+                <button type="submit" class="register">Register</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancel">Cancel</button>
+                <span class="fp">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+<!--NAVIGATION BAR YUNG MAY DROPDOWN-->
+    
+    <nav>
+        <div class="dropdown">
+        <p class="dropbtn">About</p>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#mnv">Mission and Vision</a>
+            <a href="#">History </a>
+            <a href="#">Contact </a>
+            <a href="#">Founder</a>
+        </div>
+        </div>
+    
+        <div class="dropdown">
+        <p class="dropbtn">Life at ISCP</p>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">ISCP Hymn</a>
+            <a href="#">University Facility</a>
+            <a href="#">Holidays</a>
+        </div>
+        </div>
+
+        <div class="dropdown">
+        <p class="dropbtn">Student </p>
+        <div class="dropdown-content">
+            <a href="#">Student Portal</a>
+            <a href="#">Foreign Student</a>
+            <a href="#Enrolled Student">Enrolled Student</a>
+            <a href="#">e-Learning</a>
+            <a href="#">Student Organization </a>
+        </div>
+        </div>
+        
+        <div class="dropdown">
+        <p class="dropbtn">Admissions </p>
+        <div class="dropdown-content">
+            <a href="#">First Semester 2024-2025</a>
+            <a href="#">Enrolled Students</a>
+            <a href="#">Requirments</a>
+            <a href="#">Course Offering</a>
+            <a href="#">Admission Results</a>
+            <a href="#EnrollmentForm">Enrollment Form</a>
+        </div>
+        </div>
+
+        <div class="dropdown">
+        <p class="dropbtn">Campus and Colleges</p>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#campus">Branches</a>
+            <a href="#">Colleges</a>
+        </div>
+        </div>
+        
+        
+        <div class="dropdown">
+        <p class="dropbtn">Services</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Library</a>
+            <a href="#">Research IS</a>
+            <a href="#events">Events</a>
+            <a href="#">Job Portal</a>
+            <a href="#">Downloable Forms</a>
+        </div>
+        </div>
+    </nav>
+    <!--NAVIGATION BAR END-->
+    
+    <!-- Success Message -->
+    <div id="successMessage" class="message">
+        Successfully Registered
+    </div>
+
+    <!--FIRST PARALLAX-->
+    <div class="parallax_1">
+        <p class="parallax_text_1">WELCOME AND JOIN OUR ADVENTURE HERE IN ISCP!</p>
+    </div>
+    <!--FIRST PARALLAX(END)-->
+
+    <!--CAMPUS SCROLL PICTURES-->
+    <div class="campus_background">
+    <h1 class="campustext" > Take a look <br> in our campus<h1>
+    
+    <div class="img-scroll" id="campus">
+        <img src="campus1.jpg" alt="Campus Image 1">
+        <img src="campus2.jpg" alt="Campus Image 2">
+        <img src="campus3.jpg" alt="Campus Image 3">
+    </div>
+    </div>
+    <!--CAMPUS SCROOL PICTURE(END)-->
+
+    <!--PARALLAX 2-->
+    <div class="parallax_2" id="events">
+        <button class="parallax_button_2">REGISTER NOW</button>
+    </div>
+    <!--END NG PARALLAX 2-->
+
+
+    <!--YUNG BOX NA BLUE YUNG MAY MGA GRADUATES-->
+    <div class = "info" id="Enrolled Student">
+       <img src="Graduates.png" alt="img" width="100%" height="100%">
+    </div>
+    <!--YUNG BOX(END)-->
+
+    <div class = "mission-vission" id="mnv">
+        <img src= "mission.png" alt="img" class="missionpic">
+        <img src= "core.png" alt="img" class="corepic">
+        <img src= "vision.png" alt="img" class="visionpic">
+        
+    </div>
+     
+
+    <main>
+        <h1>About ISCP</h1>
+        <p>Welcome to the International State College of the Philippines (ISCP), where academic excellence meets global opportunities. At ISCP, we are dedicated to fostering a dynamic learning environment that empowers students to achieve their fullest potential. Our institution prides itself on providing world-class education, blending rigorous academic programs with real-world experiences to prepare our students for success in an increasingly interconnected world.</p>
+    </main>
+
+    <div class="maintable" id="EnrollmentForm">
+        <table class="table">
+            <tr>
+                <th>
+                    ENROLLMENT FORM
+                </th>
+            </tr> 
+            <tr>
+                <td >
+                    Your Name
+                </td>
+                <td>
+                    <input type="text" placeholder="First" class="uname" required>
+                </td>
+                <td>
+                    <input type="text" placeholder="Last" class="uname" required>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    Home Address
+                </td>
+                <td colspan="2">
+                    <input type="text" placeholder="Street Address" class="boxtable" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    <input type="text" placeholder="Street Address Line 2" class="boxtable" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td >
+                    <input type="text" placeholder="City" class="uname" required>
+                </td>
+                <td>
+                    <input type="text" placeholder="Region" class="uname" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="text" placeholder="Postal/Zip Code" class="uname" required>
+                </td>
+                <td><select name="Country" id="Country" class="option">
+                    <option value="Philippines">Philippines</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                    <option value="Taiwam">Taiwan</option>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" id="male" name="Gender">
+                    <label for="male">Male</label>
+                </td>
+                <td>
+                    <input type="radio" id="female" name="Gender">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td colspan="2">
+                    <input type="text" class="boxtable" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td colspan="2">
+                    <input type="date" class="boxtable" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Citizenship</td>
+                <td colspan="2">
+                    <input type="text" class="boxtable" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Choose the Course</td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Arts In Journalism" name="EnrollmentForm">
+                    <label for="Bachelor Of Arts In Journalism">Bachelor Of Arts In Journalism</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Early Childhood Education" name="EnrollmentForm">
+                    <label for="Bachelor Of Early Childhood Education">Bachelor Of Early Childhood Education</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Elementary Education" name="EnrollmentForm">
+                    <label for="Bachelor Of Elementary Education">Bachelor Of Elementary Education</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Business Management" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Business Management">Bachelor Of Science In Business Management</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Computer Science" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Computer Science">Bachelor Of Science In Computer Science</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Entrepreneurship" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Entrepreneurship">Bachelor Of Science In Entrepreneurship</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Hospitality Management" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Hospitality Management">Bachelor Of Science In Hospitality Management</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Information Technology" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Information Technology">Bachelor Of Science In Information Technology</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Office Administration" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Office Administration">Bachelor Of Science In Office Administration</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Science In Psychology" name="EnrollmentForm">
+                    <label for="Bachelor Of Science In Psychology">Bachelor Of Science In Psychology</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="radio" id="Bachelor Of Secondary Education" name="EnrollmentForm">
+                    <label for="Bachelor Of Secondary Education">Bachelor Of Secondary Education</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form><button class="sumbitenrollmentform">submit</button></form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 My School. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the form from submitting in the traditional way
+            document.getElementById('successMessage').style.display = 'block'; // Shows the success message
+            document.getElementById('id02').style.display = 'none'; // Hides the modal
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none'; // Hides the success message after 3 seconds
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
